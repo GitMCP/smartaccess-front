@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import logo from './Logo.svg';
 import './App.css';
 import socketIOClient from 'socket.io-client';
 import { useEffect, useState } from 'react';
 
 function App(){
-  const [response, setResponse ] = useState("");
+  const [response, setResponse ] = useState(" ");
   useEffect(() => {
     const socket = socketIOClient("https://smart-access-api.herokuapp.com")
     socket.on("FromAPI", data => {
