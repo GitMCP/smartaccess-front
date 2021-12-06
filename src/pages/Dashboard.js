@@ -39,8 +39,14 @@ const Dashboard = () => {
     model: ''
   });
 
-  useEffect(() => {
-    axios.get('https://smart-access-api.herokuapp.com/access?last=true');
+  useEffect(async () => {
+    const { data } = await axios.get(
+      'https://smart-access-api.herokuapp.com/access?last=true'
+    );
+    setLastVehicle({
+      plate: data.vehicle.plate,
+      model: `${data.vehicle.brand} ${data.vehicle.model}`
+    });
   }, []);
   useEffect(() => {
     socket.on('UNKNOWN_VEHICLE', (data) => {
@@ -49,6 +55,7 @@ const Dashboard = () => {
     });
 
     socket.on('LAST_VEHICLE', (data) => {
+      console.log(data);
       setLastVehicle(data);
       setAccessNotification({
         show: true,
