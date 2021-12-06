@@ -53,9 +53,8 @@
     "react-scripts": "^4.0.3",
     "socket.io-client": "^4.4.0",
     "uuid": "^8.3.0",
-    "yup": "^0.32.9"
-  },
-  "devDependencies": {
+    "yup": "^0.32.9",
     "eslint-config-airbnb": "^18.2.1"
-  }
+  },
+  "devDependencies": {}
 }
